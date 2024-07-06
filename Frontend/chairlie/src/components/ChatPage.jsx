@@ -22,7 +22,7 @@ function ChatPage() {
             const response = await axios.post('http://localhost:3002/chat', {
                 messages: [{ role: 'user', content: userMessage }],
             });
-
+            console.log(response.data);
             const assistantMessage = response.data.choices[0].message.content;
             setAssistantMessages(prev => [...prev, assistantMessage]);
         } catch (error) {
