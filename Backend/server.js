@@ -22,7 +22,11 @@ app.use(cors({
 
 mongoose.connect("mongodb+srv://Miltiadis:SHA25@cluster0.5konvqu.mongodb.net/chAIrlie")
 
-const User = mongoose.model(`User`, {})
+const User = mongoose.model(`User`, {
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+})
 
 app.post('/chat', async (req, res) => {
     try {
