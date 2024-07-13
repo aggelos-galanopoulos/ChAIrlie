@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import history from "../history";
+import "./LoginPage.css"
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
