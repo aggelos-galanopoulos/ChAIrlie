@@ -1,23 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import ChatPage from "./components/ChatPage";
 import LoginPage from "./components/LoginPage";
-import { Router, Route, Switch, Link } from "react-router-dom";
-import history from "./history";
 
 function App() {
   return (
-    <Router history={history}>
+    <Router>
       <div className="App">
         <nav>
           <Link to="/login">Login Page</Link>
           <Link to="/chat">Chat Page</Link>
         </nav>
         <header className="App-header">
-          <Switch>
-            <Route exact path="/login" component={LoginPage} />
-            <Route path="/chat" component={ChatPage} />
-            <Route path="/" component={LoginPage} />
-          </Switch>
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/chat" element={<ChatPage />} />
+            <Route path="/" element={<LoginPage />} />
+          </Routes>
         </header>
       </div>
     </Router>
