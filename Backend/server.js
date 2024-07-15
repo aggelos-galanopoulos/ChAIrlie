@@ -7,8 +7,9 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const OpenAI = require('openai');
+
 const openai = new OpenAI({
-    apiKey: process.env['OPENAI_API_KEY'],
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
 const port = process.env.PORT || 3002;
@@ -20,7 +21,9 @@ app.use(cors({
     origin: "*"
 }));
 
-mongoose.connect("mongodb+srv://Miltiadis:SHA25@cluster0.5konvqu.mongodb.net/chAIrlie");
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Could not connect to MongoDB', err));
 
 const User = mongoose.model('User', {
     name: { type: String, required: true },
