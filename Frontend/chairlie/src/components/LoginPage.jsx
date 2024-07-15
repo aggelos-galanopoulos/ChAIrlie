@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import history from "../history";
 import "./LoginPage.css";
-import logo from "../images/loginLogo.svg"; // Αντικατέστησε με το σωστό μονοπάτι της εικόνας σου
+import logo from "../images/loginLogo.svg"; 
+
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -18,12 +19,14 @@ const LoginPage = () => {
 
   return (
     <div className="page-container">
+     
+      <div className="right-side">
       <div className="left-side">
         <img src={logo} alt="Logo" />
       </div>
-      <div className="right-side">
         <div className="login-form">
-          <h2>Login Page</h2>
+          <h1>Welcome Back</h1>
+          <h3>Please enter your details</h3>
           <input
             type="email"
             placeholder="Email"
@@ -36,6 +39,7 @@ const LoginPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <a className="invalidPassword">Forgot Password?</a>
           <button onClick={handleLogin}>Login</button>
         </div>
       </div>
