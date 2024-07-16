@@ -9,13 +9,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
+        {/* <nav> */}
           {/* <Link to="/login">Login Page</Link> */}
           {/* <Link to="/chat">Chat Page</Link> */}
-        </nav>
+        {/* </nav> */}
         <header className="App-header">
           <Routes>
-            <Route path="/signup" component={SignupPage} />
+            <Route path="/signup" element={<SignupPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/chat" element={<ChatPage />} />
             <Route path="/" element={<LoginPage />} />

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useState } from "react";
-import './ChatPage.css';
+import "./ChatPage.css"; // Ensure you have your CSS file imported
 
 
 function ChatPage() {
@@ -40,10 +39,13 @@ function ChatPage() {
 
     return (
         <div className="container">
+            <div className="chatHeader">
+                <h1 className="chairlieName">chAIrlie</h1>
+            </div>
             <div className="chatDisplay">
                 {userMessages.map((message, index) => (
                     <div key={index} className="message">
-                        <p className="userMessage"> {message}</p>
+                        <p className="userMessage">{message}</p>
                         {assistantMessages[index] && (
                             <p className="assistantMessage">{assistantMessages[index]}</p>
                         )}
@@ -56,6 +58,7 @@ function ChatPage() {
                     value={userInput}
                     onChange={handleUserInput}
                     onKeyDown={handleKeyDown}
+                    placeholder="Ask me anything..."
                 />
                 <button onClick={sendMessage}>Send</button>
             </div>

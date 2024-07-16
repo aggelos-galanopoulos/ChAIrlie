@@ -20,10 +20,11 @@ const SignupPage = () => {
 
   return (
     <div className="page-container">
+      
+      <div className="right-side">
       <div className="left-side">
         <img src={logo} alt="Logo" />
       </div>
-      <div className="right-side">
         <div className="signup-form">
           <h1>Create an Account</h1>
           <input
