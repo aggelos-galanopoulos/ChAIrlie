@@ -1,5 +1,5 @@
-
-body, html {
+body,
+html {
   color: #1d3528;
   margin: 0;
   padding: 0;
@@ -7,7 +7,6 @@ body, html {
   width: 100%;
   font-family: "Oswald", Arial, sans-serif;
 }
-
 
 .page-container {
   background-color: #fed750;
@@ -18,7 +17,7 @@ body, html {
 
 .left-side {
   flex: 1;
-  background-color: #24A1B0; /* Χρώμα φόντου */
+  background-color: #24a1b0; /* Χρώμα φόντου */
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -26,13 +25,10 @@ body, html {
   width: 80%; /* Προσαρμόστε το πλάτος σύμφωνα με τις ανάγκες σας */
   height: 700px; /* Προσαρμόστε το ύψος σύμφωνα με τις ανάγκες σας */
 }
-.charlieLogo{
-  width: 700px;
-}
 
 .right-side {
   width: 80%;
-  height:80%;
+  height: 80%;
   flex: 1;
   background-color: white;
   display: flex;
@@ -49,7 +45,7 @@ body, html {
   max-width: 400px;
 }
 
-h1 { 
+h1 {
   font-weight: 700;
   font-size: 54px;
   font-family: "Oswald";
@@ -66,28 +62,28 @@ button {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 20px;
   box-sizing: border-box;
 }
- 
- .invalidPassword{
-  color:rgba(0, 0, 0, 0.271);
+
+.invalidPassword {
+  color: rgba(0, 0, 0, 0.271);
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 20px;
   box-sizing: border-box;
-   cursor: pointer;
- }
+  cursor: pointer;
+}
 
- .invalidPassword:hover {
+.invalidPassword:hover {
   color: black;
- }
+}
 
 button {
   margin-top: 20px;
-  background-color: #24A1B0;
+  background-color: #24a1b0;
   color: #4e5c68;
   cursor: pointer;
   font-size: large;
@@ -95,19 +91,4 @@ button {
 
 button:hover {
   background-color: #fed750;
-}
-
-.signupH3 {
-  color:rgba(0, 0, 0, 0.271);
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 20px;
-  box-sizing: border-box;
-   cursor: pointer;
-}
-
-
-.singupLink {
-  color: #1d3528;
 }
