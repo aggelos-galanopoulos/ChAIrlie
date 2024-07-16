@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; 
 import history from "../history";
 import "./LoginPage.css"; 
 import logo from "../images/loginLogo.svg"; 
@@ -46,6 +47,7 @@ const SignupPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button onClick={handleSignup}>Sign Up</button>
+          <p>Do you have an account? <Link to="/login">Log in</Link></p>
         </div>
       </div>
     </div>
