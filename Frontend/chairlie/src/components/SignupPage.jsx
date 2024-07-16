@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; 
+import { Link} from "react-router-dom"; 
 import history from "../history";
-import "./LoginPage.css"; 
-import logo from "../images/loginLogo.svg"; 
+import "./SignupPage.css";
+import logo from "../images/loginLogo.svg";
 
 const SignupPage = () => {
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,14 +22,13 @@ const SignupPage = () => {
 
   return (
     <div className="page-container">
-      
       <div className="right-side">
-      <div className="left-side">
-        <img src={logo} alt="Logo" />
-      </div>
+        <div className="left-side">
+          <img className="chAirlieLogo" src={logo} alt="Logo" />
+        </div>
         <div className="signup-form">
-          <h1>Create an Account</h1>
-          <input
+          <h1>Please create an Account</h1>
+          <input className="input-name"
             type="text"
             placeholder="Full Name"
             value={name}
@@ -47,7 +47,9 @@ const SignupPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button onClick={handleSignup}>Sign Up</button>
-          <p>Do you have an account? <Link to="/login">Log in</Link></p>
+          <p>
+            Do you have an account? <Link to="/login">Log in</Link>
+          </p>
         </div>
       </div>
     </div>

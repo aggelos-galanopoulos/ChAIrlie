@@ -18,15 +18,15 @@ body, html {
 
 .left-side {
   flex: 1;
-  background-color: #24A1B0; /* Χρώμα φόντου */
+  background-color: #24A1B0; 
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%; /* Προσαρμόστε το πλάτος σύμφωνα με τις ανάγκες σας */
-  height: 700px; /* Προσαρμόστε το ύψος σύμφωνα με τις ανάγκες σας */
+  width: 80%; 
+  height: 700px; 
 }
-.charlieLogo{
+.chAirlieLogo{
   width: 700px;
 }
 
@@ -40,14 +40,14 @@ body, html {
   align-items: center;
 }
 
-.login-form {
+.signup-form {
   background-color: #46566400;
   margin: 30px;
   padding: 20px;
   border-radius: 5px;
   width: 80%;
   max-width: 400px;
-}
+} 
 
 h1 { 
   font-weight: 700;
@@ -61,8 +61,10 @@ h1 {
 h3 {
   color: #1d3528;
 }
+
 input,
-button {
+button 
+ {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
@@ -71,16 +73,6 @@ button {
   box-sizing: border-box;
 }
  
- .invalidPassword{
-  color:rgba(0, 0, 0, 0.271);
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 20px;
-  box-sizing: border-box;
-   cursor: pointer;
- }
-
  .invalidPassword:hover {
   color: black;
  }

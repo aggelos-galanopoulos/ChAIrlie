@@ -82,6 +82,7 @@ app.post('/chat', async (req, res) => {
         });
         res.json(chatCompletion);
     } catch (error) {
+        console.error('Error communicating with OpenAI API:', error);
         res.status(500).send('Error communicating with OpenAI API');
     }
 });
@@ -94,5 +95,5 @@ app.get('/', (req, res) => {
 // Start Server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-    console.log(`Secret Key ${secretKey}`);
+    // console.log(`Secret Key ${secretKey}`);
 });

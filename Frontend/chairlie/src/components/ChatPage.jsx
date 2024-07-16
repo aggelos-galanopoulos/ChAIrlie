@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./ChatPage.css"; // Ensure you have your CSS file imported
+import "./ChatPage.css"; 
 
 
 function ChatPage() {
