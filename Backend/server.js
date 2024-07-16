@@ -1,22 +1,17 @@
 require('dotenv').config();
 
 const express = require('express');
-const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const OpenAI = require('openai');
+const { Configuration, OpenAIApi } = require('openai');  // Διορθωμένη εισαγωγή
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-
+const app = express();
 const port = process.env.PORT || 3002;
 const secretKey = process.env.SECRET_KEY;
 
 app.use(express.json());
-
 app.use(cors({
     origin: "*"
 }));
@@ -30,6 +25,11 @@ const User = mongoose.model('User', {
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
 });
+
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 // Signup Endpoint
 app.post('/signup', async (req, res) => {
@@ -76,11 +76,11 @@ app.post('/login', async (req, res) => {
 app.post('/chat', async (req, res) => {
     try {
         const { messages } = req.body;
-        const chatCompletion = await openai.chat.completions.create({
-            messages,
+        const response = await openai.createChatCompletion({
             model: 'gpt-3.5-turbo',
+            messages,
         });
-        res.json(chatCompletion);
+        res.json(response.data);
     } catch (error) {
         console.error('Error communicating with OpenAI API:', error);
         res.status(500).send('Error communicating with OpenAI API');
@@ -95,5 +95,4 @@ app.get('/', (req, res) => {
 // Start Server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-    // console.log(`Secret Key ${secretKey}`);
 });
